@@ -8,7 +8,7 @@ public class playerCollision : MonoBehaviour
     // Start is called before the first frame update
     void OnCollisionEnter(Collision collisionInfo)
     {
-        if(collisionInfo.collider.tag == "Obstacle")
+        if(collisionInfo.collider.tag == "Obstacle" || collisionInfo.collider.tag == "Enemy")
         {
             playerMvmnt.enabled = false;
             FindObjectOfType<GameManager>().EndGame();

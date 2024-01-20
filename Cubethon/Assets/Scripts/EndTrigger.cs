@@ -6,9 +6,12 @@ public class EndTrigger : MonoBehaviour
 {
     public GameManager gameManager;
     // Start is called before the first frame update
-    void OnTriggerEnter()
+    void OnTriggerEnter(Collider collision)
     {
-        gameManager.CompleteLevel();
+        if (collision.tag == "Player")
+        {
+            gameManager.CompleteLevel();
+        }
     }
 
     // Update is called once per frame
